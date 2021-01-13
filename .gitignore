@@ -63,6 +63,9 @@ sig
 registration_key
 auth
 binaries/*
-!binaries/1.0.9
+!binaries/2.9.2
 
 .DS_STORE
+
+*.iml
+.idea/

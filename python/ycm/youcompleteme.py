@@ -162,7 +162,8 @@ class YouCompleteMe( object ):
     tabnine_binary_path = os.path.join(this_file_path, '../../binaries/')
 
 
-    args = [ '--port={0}'.format( server_port ),
+    args = [ '--client=vim',
+             '--port={0}'.format( server_port ),
              '--options_file={0}'.format( options_file.name ),
              '--log={0}'.format( self._user_options[ 'log_level' ] ),
              '--idle_suicide_seconds={0}'.format(
@@ -761,10 +762,10 @@ def start_tabnine_proc(cmd_args, binary_dir):
   arch_platforms = [
     "x86_64-apple-darwin",
     "x86_64-pc-windows-gnu",
-    "x86_64-unknown-linux-gnu",
+    "x86_64-unknown-linux-musl",
     "i686-apple-darwin",
     "i686-pc-windows-gnu",
-    "i686-unknown-linux-gnu",
+    "i686-unknown-linux-musl",
   ]
   arch_platforms.sort(key=guess_platform_suitability, reverse=True)
   choices = []
